@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { usersResponseMock } from './mock/users-response.mock';
 
 const LoginPage = () => {
   const router = useRouter();
@@ -12,16 +13,21 @@ const LoginPage = () => {
   useEffect(() => {
     const isAuth = localStorage.getItem('auth') === 'true';
     if (isAuth) {
-      router.push('/eventos');
+      router.push('panel/events');
     }
   }, [router]);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (email === 'bruno@email.com' && password === '123456') {
+    const user = usersResponseMock.find(
+      (userItem) => userItem.email === email && userItem.password === password
+    );
+
+    if (user) {
       localStorage.setItem('auth', 'true');
-      router.push('/eventos');
+      localStorage.setItem('user', JSON.stringify(user));
+      router.push('panel/events');
     } else {
       setError('Email ou senha inválidos');
     }
