@@ -1,21 +1,14 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { useEffect, useState } from 'react';
-import { usersResponseMock } from './mock/users-response.mock';
+import { useState } from 'react';
+import { usersResponseMock } from '../../mock/users-response.mock';
 
 const LoginPage = () => {
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-
-  useEffect(() => {
-    const isAuth = localStorage.getItem('auth') === 'true';
-    if (isAuth) {
-      router.push('panel/events');
-    }
-  }, [router]);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,9 +18,9 @@ const LoginPage = () => {
     );
 
     if (user) {
-      localStorage.setItem('auth', 'true');
+      localStorage.setItem('token', 'true');
       localStorage.setItem('user', JSON.stringify(user));
-      router.push('panel/events');
+      router.push('dashboard/eventos');
     } else {
       setError('Email ou senha inválidos');
     }
@@ -35,7 +28,7 @@ const LoginPage = () => {
 
   return (
     <section className="flex h-screen w-full items-center justify-center bg-gray-100">
-      <main className="gap-5 flex rounded-2xl bg-white p-3 shadow-2xl">
+      <main className="gap-10 flex rounded-2xl bg-white p-3 shadow-2xl">
         <div className="flex h-[480px] w-[350px] flex-col items-start px-5 py-10">
           <img src="./assets/logo.png" alt="" className="mb-9" />
           <h1 className="text-2xl font-bold text-orange-700/80">Bem-vindo de volta</h1>
