@@ -2,16 +2,17 @@
 
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { usersResponseMock } from '../../mock/users-response.mock';
-import { Eye, EyeOff } from 'lucide-react';
+import { usersResponseMock } from '../../../mock/users-response.mock';
 import Cookies from 'js-cookie';
+
+import { Input } from '@/components/Input';
+import { Button } from '@/components/Button';
 
 const LoginPage = () => {
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -39,46 +40,24 @@ const LoginPage = () => {
           <p className="mb-9 text-sm text-blue-800/50">Entre com sua conta para acessar o painel.</p>
           {error && <p className="mb-2 text-red-500">{error}</p>}
           <form className="flex w-full flex-col" onSubmit={handleLogin}>
-            <div className="mb-4 flex flex-col">
-              <label htmlFor="" className="text-xs font-semibold text-orange-700/80">
-                E-mail
-              </label>
-              <input
-                type="email"
-                placeholder="seunome@seuservidor.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="rounded-full outline-none bg-[#F6F6F6] px-6 py-3 text-xs placeholder:text-blue-800/50"
-              />
-            </div>
-            <div className="mb-4 flex flex-col relative">
-              <label className="text-xs font-semibold text-orange-700/80">
-                Senha
-              </label>
-              <input
-                type={showPassword ? 'text' : 'password'}
-                placeholder="Digite aqui"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                className="rounded-full outline-none bg-[#F6F6F6] px-6 py-3 text-xs placeholder:text-blue-800/50 pr-12"
-              />
-              <button
-                type="button"
-                onClick={() => setShowPassword((prev) => !prev)}
-                className="absolute right-4 top-7 text-orange-700/80"
-              >
-                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
-              </button>
-            </div>
-            <button
-              type="submit"
-              className="w-full rounded-full bg-orange-700/80 py-2 text-sm font-medium text-white hover:bg-orange-700/80 disabled:cursor-not-allowed disabled:bg-orange-700/80 disabled:opacity-50"
-              disabled={!email || !password}
-            >
-              Enviar
-            </button>
+            <Input
+              label="E-mail"
+              type="email"
+              placeholder="seunome@seuservidor.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <Input
+              label="Senha"
+              type="password"
+              placeholder="Digite aqui"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              showToggle
+            />
+            <Button disabled={!email || !password}>Enviar</Button>
           </form>
         </div>
         <aside className="relative flex items-end">
