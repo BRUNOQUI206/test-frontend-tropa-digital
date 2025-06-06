@@ -35,7 +35,7 @@ const LoginPage = () => {
     <section className="flex h-screen w-full items-center justify-center">
       <main className="gap-10 flex rounded-2xl bg-white p-3 shadow-2xl">
         <div className="flex h-[480px] flex-col items-start px-5 py-10 sm:w-[350px]">
-          <img src="./assets/logo.png" alt="Tropa-Digital" className="mb-9" />
+          <img src="/assets/logo.png" alt="Tropa-Digital" className="mb-9" />
           <h1 className="text-2xl font-bold text-orange-700/80">Bem-vindo de volta</h1>
           <p className="mb-9 text-sm text-blue-800/50">Entre com sua conta para acessar o painel.</p>
           {error && <p className="mb-2 text-red-500">{error}</p>}
