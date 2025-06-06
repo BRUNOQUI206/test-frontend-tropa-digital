@@ -1,4 +1,5 @@
 import { Menu } from './dashboard/components/Menu';
+import { Welcome } from './dashboard/components/Welcome';
 
 export default function PublicLayout({
   children,
@@ -7,8 +8,11 @@ export default function PublicLayout({
 }>) {
   return (
     <div className="bg-neutral-100 min-h-screen flex">
-      <Menu/>
-      {children}
+      <Menu />
+      <div className="w-full p-8">
+        <Welcome />
+        {children}
+      </div>
     </div>
   );
 }
