@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { usersResponseMock } from '../../mock/users-response.mock';
+import Cookies from 'js-cookie';
 
 const LoginPage = () => {
   const router = useRouter();
@@ -18,9 +19,10 @@ const LoginPage = () => {
     );
 
     if (user) {
-      localStorage.setItem('token', 'true');
-      localStorage.setItem('user', JSON.stringify(user));
-      router.push('dashboard/eventos');
+      Cookies.set('token', 'true', { expires: 1 });
+      Cookies.set('user', JSON.stringify(user), { expires: 1 });
+
+      router.push('/dashboard/eventos');
     } else {
       setError('Email ou senha inválidos');
     }
