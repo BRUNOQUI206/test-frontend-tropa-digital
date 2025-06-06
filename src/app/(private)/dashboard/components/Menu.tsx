@@ -38,7 +38,7 @@ export const Menu = () => {
       : 'text-gray-700 hover:bg-orange-100 hover:text-orange-700'}`;
 
   return (
-    <div className="flex flex-col bg-white min-w-52 px-5 py-8 border-r border-r-black/10 h-screen">
+    <div className="flex flex-col bg-white max-w-52 px-5 py-8 border-r border-r-black/10 h-screen">
       <img src="/assets/logo.png" alt="Tropa-Digital" className="mb-8" />
       <div className="flex flex-col justify-between h-full">
         <nav>
@@ -84,8 +84,8 @@ export const Menu = () => {
                   />
                 </figure>
               </div>
-              <div>
-                <h3 className="text-sm font-medium">{user.name}</h3>
+              <div className="max-w-[100px]">
+                <h3 className="text-sm font-medium truncate overflow-hidden whitespace-nowrap">{user.name}</h3>
                 <p className="text-xs text-gray-400 font-normal">
                   {ELevel[user.level]}
                 </p>
