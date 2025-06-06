@@ -32,7 +32,7 @@ const LoginPage = () => {
   };
 
   return (
-    <section className="flex h-screen w-full items-center justify-center bg-gray-100">
+    <section className="flex h-screen w-full items-center justify-center">
       <main className="gap-10 flex rounded-2xl bg-white p-3 shadow-2xl">
         <div className="flex h-[480px] flex-col items-start px-5 py-10 sm:w-[350px]">
           <img src="./assets/logo.png" alt="" className="mb-9" />
