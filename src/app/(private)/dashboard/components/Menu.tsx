@@ -2,15 +2,32 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import Cookies from 'js-cookie';
+import { useEffect, useState } from 'react';
 import {
   LayoutGrid,
   CalendarDays,
   Users,
   ClipboardList,
 } from 'lucide-react';
+import type { IUserResponse } from '@/interface/user.interface';
+import { ELevel } from '@/enum/level.enum';
 
 export const Menu = () => {
   const pathname = usePathname();
+  const [user, setUser] = useState<IUserResponse | null>(null);
+
+  useEffect(() => {
+    const cookieData = Cookies.get('user');
+    if (cookieData) {
+      try {
+        const parsed = JSON.parse(cookieData);
+        setUser(parsed);
+      } catch (e) {
+        console.error('Erro ao ler usuário:', e);
+      }
+    }
+  }, []);
 
   const isActive = (path: string) => pathname === path;
 
@@ -55,8 +72,27 @@ export const Menu = () => {
             </li>
           </ul>
         </nav>
-        <div className="border-t-2 border-gray-200 pt-4 mt-4">
-        </div>
+        {user && (
+          <div className="border-t-2 border-gray-200 pt-4 mt-4">
+            <div className="flex items-center gap-4">
+              <div className="p-[2px] rounded-2xl border-2 border-orange-700/80 inline-block">
+                <figure className="w-10 h-10 rounded-2xl overflow-hidden bg-white">
+                  <img
+                    src={user.photo}
+                    alt={user.name}
+                    className="object-cover w-full h-full"
+                  />
+                </figure>
+              </div>
+              <div>
+                <h3 className="text-sm font-medium">{user.name}</h3>
+                <p className="text-xs text-gray-400 font-normal">
+                  {ELevel[user.level]}
+                </p>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );
