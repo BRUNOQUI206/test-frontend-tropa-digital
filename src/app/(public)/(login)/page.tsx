@@ -3,6 +3,7 @@
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { usersResponseMock } from '../../mock/users-response.mock';
+import { Eye, EyeOff } from 'lucide-react';
 import Cookies from 'js-cookie';
 
 const LoginPage = () => {
@@ -10,6 +11,7 @@ const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -50,18 +52,25 @@ const LoginPage = () => {
                 className="rounded-full outline-none bg-[#F6F6F6] px-6 py-3 text-xs placeholder:text-blue-800/50"
               />
             </div>
-            <div className="mb-4 flex flex-col">
-              <label htmlFor="" className="text-xs font-semibold text-orange-700/80">
+            <div className="mb-4 flex flex-col relative">
+              <label className="text-xs font-semibold text-orange-700/80">
                 Senha
               </label>
               <input
-                type="password"
+                type={showPassword ? 'text' : 'password'}
                 placeholder="Digite aqui"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
-                className="rounded-full outline-none bg-[#F6F6F6] px-6 py-3 text-xs placeholder:text-blue-800/50"
+                className="rounded-full outline-none bg-[#F6F6F6] px-6 py-3 text-xs placeholder:text-blue-800/50 pr-12"
               />
+              <button
+                type="button"
+                onClick={() => setShowPassword((prev) => !prev)}
+                className="absolute right-4 top-7 text-orange-700/80"
+              >
+                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
+              </button>
             </div>
             <button
               type="submit"
