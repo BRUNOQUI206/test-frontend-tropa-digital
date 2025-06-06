@@ -25,7 +25,7 @@ export const UserProfile = () => {
   return (
     <div className="flex items-center gap-4">
       <div className="p-[2px] rounded-2xl border-2 border-orange-700/80 inline-block">
-        <figure className="w-10 h-10 rounded-2xl overflow-hidden bg-white">
+        <figure className="w-10 h-10 rounded-xl overflow-hidden bg-white">
           <img
             src={user.photo}
             alt={user.name}
