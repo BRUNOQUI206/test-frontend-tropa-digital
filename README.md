@@ -17,6 +17,7 @@ Este é um projeto construído com **Next.js 15.1.6** e **React 19**, utilizando
 
 ## 📁 Estrutura de Pastas
 
+```bash
 src/
 ├─ app/ # Rotas com App Router (Next 13+)
 │ ├─ (public)/ # Rotas públicas (login, etc)
@@ -28,10 +29,7 @@ src/
 ├─ enum/ # Enums globais (nível de usuário, etc)
 ├─ interface/ # Tipagens TypeScript
 ├─ middleware.ts # Middleware de autenticação com cookies
-
-csharp
-Copiar
-Editar
+```
 
 ## ▶️ Como rodar o projeto
 
