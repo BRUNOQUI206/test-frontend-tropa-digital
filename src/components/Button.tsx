@@ -18,7 +18,7 @@ export const Button = ({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className="rounded-full bg-orange-700/80 px-4 py-2 text-sm font-medium text-white hover:bg-orange-700/80 disabled:cursor-not-allowed disabled:bg-orange-700/80 disabled:opacity-50"
+      className="flex items-center rounded-full bg-orange-700/80 px-4 py-2 text-sm font-medium text-white hover:bg-orange-700/70 disabled:cursor-not-allowed disabled:bg-orange-700/80 disabled:opacity-50"
     >
       {children}
     </button>
