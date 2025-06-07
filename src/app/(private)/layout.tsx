@@ -1,5 +1,5 @@
-import { Menu } from './dashboard/components/Menu';
-import { Welcome } from './dashboard/components/Welcome';
+import { Menu } from "./dashboard/components/Menu";
+import { Welcome } from "./dashboard/components/Welcome";
 
 export default function PublicLayout({
   children,
@@ -7,7 +7,7 @@ export default function PublicLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="bg-neutral-100 min-h-screen flex">
+    <div className="flex min-h-screen bg-neutral-100">
       <Menu />
       <div className="w-full p-8">
         <Welcome />

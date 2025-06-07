@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { MenuLink } from './MenuLink';
-import { UserProfile } from './UserProfile';
-import { LogoutButton } from './LogoutButton';
+import { MenuLink } from "./MenuLink";
+import { UserProfile } from "./UserProfile";
+import { LogoutButton } from "./LogoutButton";
 
 import {
   LayoutGrid,
@@ -10,27 +10,47 @@ import {
   Users,
   ClipboardList,
   User,
-} from 'lucide-react';
+} from "lucide-react";
 
 export const Menu = () => {
   return (
-    <div className="flex flex-col bg-white w-56 px-5 py-8 border-r border-r-black/10 h-screen">
+    <div className="flex h-screen w-56 flex-col border-r border-r-black/10 bg-white px-5 py-8">
       <img src="/assets/logo.png" alt="Tropa-Digital" className="mb-8" />
 
-      <div className="flex flex-col justify-between h-full">
+      <div className="flex h-full flex-col justify-between">
         <nav>
-          <h2 className="text-[10px] text-gray-400 font-extrabold tracking-[2px] ml-3 mb-2">
+          <h2 className="mb-2 ml-3 text-[10px] font-extrabold tracking-[2px] text-gray-400">
             MENU
           </h2>
-          <ul className="font-medium text-sm space-y-1">
-            <li><MenuLink href="#" icon={<LayoutGrid size={16} />} label="Dashboard" /></li>
-            <li><MenuLink href="/dashboard/eventos" icon={<CalendarDays size={16} />} label="Eventos" /></li>
-            <li><MenuLink href="#" icon={<Users size={16} />} label="Equipes" /></li>
-            <li><MenuLink href="#" icon={<ClipboardList size={16} />} label="Inscrições" /></li>
+          <ul className="space-y-1 text-sm font-medium">
+            <li>
+              <MenuLink
+                href="#"
+                icon={<LayoutGrid size={16} />}
+                label="Dashboard"
+              />
+            </li>
+            <li>
+              <MenuLink
+                href="/dashboard/eventos"
+                icon={<CalendarDays size={16} />}
+                label="Eventos"
+              />
+            </li>
+            <li>
+              <MenuLink href="#" icon={<Users size={16} />} label="Equipes" />
+            </li>
+            <li>
+              <MenuLink
+                href="#"
+                icon={<ClipboardList size={16} />}
+                label="Inscrições"
+              />
+            </li>
           </ul>
         </nav>
 
-        <div className="flex flex-col gap-2 border-t-2 border-gray-200 pt-4 mt-4">
+        <div className="mt-4 flex flex-col gap-2 border-t-2 border-gray-200 pt-4">
           <UserProfile />
           <MenuLink href="#" icon={<User size={16} />} label="Alterar Dados" />
           <LogoutButton />
