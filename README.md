@@ -18,17 +18,28 @@ Este é um projeto construído com **Next.js 15.1.6** e **React 19**, utilizando
 ## 📁 Estrutura de Pastas
 
 ```bash
+
 src/
-├─ app/ # Rotas com App Router (Next 13+)
-│ ├─ (public)/ # Rotas públicas (login, etc)
-│ ├─ (private)/dashboard # Painel interno com autenticação
-│ │ ├─ eventos/ # Página de eventos
-│ │ └─ components/ # Componentes reutilizáveis do dashboard
-├─ components/ # Componentes globais (botões, inputs, etc)
-├─ mock/ # Dados mockados (ex: usuários, eventos)
-├─ enum/ # Enums globais (nível de usuário, etc)
-├─ interface/ # Tipagens TypeScript
-├─ middleware.ts # Middleware de autenticação com cookies
+├── app/
+│   ├── (public)/                     # Rotas públicas (ex: login)
+│   │   └── (login)/                  # Página de login
+│   │       ├── page.tsx
+│   │       └── layout.tsx
+│   ├── (private)/dashboard/          # Área autenticada (restrita)
+│   │   ├── components/               # Componentes reutilizáveis do dashboard
+│   │   │   └── Menu, UserProfile...  # Menu, logout, links, etc.
+│   │   └── eventos/                  # Página de eventos
+│   │       ├── components/           # Componentes específicos da tela de eventos
+│   │       └── page.tsx
+│   └── layout.tsx                    # Layout base da aplicação
+│
+├── components/                       # Componentes globais (Input, Button, etc)
+├── enum/                             # Enums globais (ex: níveis de usuário)
+├── interface/                        # Interfaces TypeScript
+├── mock/                             # Dados simulados (ex: usuários, eventos)
+├── types/                            # Tipagens auxiliares
+├── middleware.ts                     # Middleware para proteção de rotas
+
 ```
 
 ## ▶️ Como rodar o projeto
