@@ -1,4 +1,4 @@
-import { userResponse } from "../types/user-response.type";
+import { userResponse } from "../types/users-response.type";
 
 export const usersResponseMock: userResponse = [
   {
