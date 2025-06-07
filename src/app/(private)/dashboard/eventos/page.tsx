@@ -21,7 +21,7 @@ const EventsPage = () => {
     <section className="flex flex-col">
       <h1 className="text-xl font-bold text-orange-700/80">Todos eventos</h1>
       <div className="mt-4 rounded-lg border border-[#09428F2B] bg-white p-6">
-        <div className="flex items-center justify-end gap-3 py-3">
+        <div className="flex flex-wrap-reverse items-center justify-end gap-3 py-3">
           <SearchInput
             value={search}
             onChange={(e) => setSearch(e.target.value)}

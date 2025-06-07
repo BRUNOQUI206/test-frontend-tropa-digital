@@ -15,7 +15,7 @@ import { UserProfile } from "./UserProfile";
 
 export const Menu = () => {
   return (
-    <div className="flex h-screen w-56 flex-col border-r border-r-black/10 bg-white px-5 py-8">
+    <div className="flex w-56 flex-col h-full border-r border-r-black/10 bg-white px-5 py-8">
       <img src="/assets/logo.png" alt="Tropa-Digital" className="mb-8" />
 
       <div className="flex h-full flex-col justify-between">
