@@ -52,21 +52,19 @@ npm install
 yarn install
 Inicie o servidor de desenvolvimento:
 
-bash
-Copiar
-Editar
 npm run dev
 # ou
 yarn dev
 Acesse: http://localhost:3000
+```
 
 🔐 Autenticação
 A autenticação é feita por cookies, verificados via middleware.ts. Usuários válidos estão mockados no arquivo:
 
-bash
-Copiar
-Editar
+``` bash
 src/mock/users-response.mock.ts
+```
+
 ✨ Funcionalidades
 Página de login com cookies persistentes
 
