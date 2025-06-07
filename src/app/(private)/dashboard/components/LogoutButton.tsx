@@ -1,8 +1,8 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import Cookies from "js-cookie";
 import { Power } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export const LogoutButton = () => {
   const router = useRouter();

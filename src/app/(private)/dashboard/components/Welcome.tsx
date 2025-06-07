@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
+import { useEffect, useState } from "react";
+
 import type { IUserResponse } from "@/interface/user.interface";
 
 export const Welcome = () => {

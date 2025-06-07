@@ -1,12 +1,13 @@
 "use client";
 
+import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { usersResponseMock } from "../../../mock/users-response.mock";
-import Cookies from "js-cookie";
 
-import { Input } from "@/components/Input";
 import { Button } from "@/components/Button";
+import { Input } from "@/components/Input";
+
+import { usersResponseMock } from "../../../mock/users-response.mock";
 
 const LoginPage = () => {
   const router = useRouter();

@@ -1,16 +1,17 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
+import {
+  CalendarDays,
+  ClipboardList,
+  LayoutGrid,
+  User,
+  Users,
+} from "lucide-react";
+
+import { LogoutButton } from "./LogoutButton";
 import { MenuLink } from "./MenuLink";
 import { UserProfile } from "./UserProfile";
-import { LogoutButton } from "./LogoutButton";
-
-import {
-  LayoutGrid,
-  CalendarDays,
-  Users,
-  ClipboardList,
-  User,
-} from "lucide-react";
 
 export const Menu = () => {
   return (
