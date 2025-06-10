@@ -3,8 +3,8 @@
 import { Menu as MenuIcon, X } from 'lucide-react';
 import { useState } from 'react';
 
-import { Menu } from './dashboard/components/Menu';
-import { Welcome } from './dashboard/components/Welcome';
+import { Menu } from './dashboard/_components/Menu';
+import { Welcome } from './dashboard/_components/Welcome';
 
 export default function PrivateLayout({
   children,
